@@ -4,4 +4,6 @@
     <string name="valuelabel">Enter a value here:</string>
     <string name="set_value">Set Value</string>
     <string name="clear_text">Clear Value</string>
+    <string name="choose_a_fibonacci">Choose a Fibonacci #</string>
+    <string name="fib_alert">Choose a Fibanocci #</string>
 </resources>

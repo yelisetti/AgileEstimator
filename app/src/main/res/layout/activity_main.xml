@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="vishal.yelisetti.com.agileestimation2.MainActivity">
+    android:layout_height="match_parent">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -19,6 +17,7 @@
             android:layout_height="wrap_content"
             android:text="@string/headerlabel"
             android:textStyle="bold"
+            android:layout_marginLeft="2dp"
             android:textSize="20sp"
             />
 
@@ -50,6 +49,17 @@
             android:layout_toRightOf="@+id/setValuebtn"
             android:layout_alignBottom="@+id/editText" />
 
+        <TextView
+            android:id="@+id/fibonacciText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/clearbtn"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:visibility="gone"
+            android:text="@string/choose_a_fibonacci"
+            android:textColor="#ff8100" />
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -58,7 +68,7 @@
         android:orientation="vertical"
         android:id="@+id/valueID"
         android:layout_below="@+id/Header"
-        android:background="#ff4500"
+        android:background="#ff8100"
         >
 
         <TextView
@@ -72,5 +82,13 @@
             android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="2dp"
+        android:layout_toEndOf="@+id/Header" />
 
 </RelativeLayout>
