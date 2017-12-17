@@ -108,13 +108,12 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                                 mDisplayTextView.setText(mInputEditText.getText().toString());
                                 alertTextView.setVisibility(View.GONE);
                             } else {
-                                mDisplayTextView.setText(mInputEditText.getText().toString());
                                 alertTextView.setVisibility(View.VISIBLE);
                             }
-                            hideKeyboard();
                         } else {
                             mDisplayTextView.setText(mInputEditText.getText().toString());
                             alertTextView.setVisibility(View.GONE);
+                            hideKeyboard();
                         }
                     }
                 }
