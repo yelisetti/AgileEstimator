@@ -17,8 +17,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import it.sephiroth.android.library.tooltip.Tooltip;
-
 public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener {
 
     EditText mInputEditText;
@@ -46,7 +44,6 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         clearTextOnClick();
         getSpinner();
 
-        Arrays.sort(agileArr);
     }
 
     private static boolean contains(Integer[] arr, Integer item) {
@@ -65,7 +62,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
         // Creating adapter for spinner
         ArrayAdapter<String> dataAdapter =
-                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categories);
+                new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, categories);
 
         // Drop down layout style - list view with radio button
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -105,8 +102,10 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                     public void onClick(View view) {
                         if (taskSpinner.getSelectedItem().toString().equals("Story")) {
                             if (contains(agileArr, Integer.parseInt(mInputEditText.getText().toString()))) {
+                                Arrays.sort(agileArr);
                                 mDisplayTextView.setText(mInputEditText.getText().toString());
                                 alertTextView.setVisibility(View.GONE);
+                                hideKeyboard();
                             } else {
                                 alertTextView.setVisibility(View.VISIBLE);
                             }

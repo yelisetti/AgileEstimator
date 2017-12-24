@@ -16,9 +16,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/headerlabel"
+            android:layout_marginTop="10dp"
             android:textStyle="bold"
             android:layout_marginLeft="2dp"
             android:textSize="20sp"
+            />
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/Headerlabel"
+            android:dropDownSelector="@android:color/white"
             />
 
         <EditText
@@ -74,21 +84,13 @@
         <TextView
             android:id="@+id/agilevalue"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="200sp"
+            android:layout_height="match_parent"
+            android:textSize="210sp"
             android:textColor="@android:color/white"
             android:gravity="center_vertical"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
 
     </RelativeLayout>
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="2dp"
-        android:layout_toEndOf="@+id/Header" />
 
 </RelativeLayout>
