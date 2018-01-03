@@ -2,20 +2,26 @@ package estimator.agile.com.estimator;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener {
 
@@ -25,6 +31,11 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     Button mSetValueBtn;
     Button mClearValueBtn;
     Spinner taskSpinner;
+    RelativeLayout valueID;
+
+    Timer timer;
+    TimerTask timerTask;
+    final Handler handler = new Handler();
 
     private Integer[] agileArr = {0, 1, 2, 3, 5, 8, 13, 20, 40, 100};
 
@@ -39,11 +50,31 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         mClearValueBtn = findViewById(R.id.clearbtn);
         alertTextView = findViewById(R.id.fibonacciText);
         taskSpinner = findViewById(R.id.spinner);
+        valueID = findViewById(R.id.valueID);
 
         displayTextOnClick();
         clearTextOnClick();
         getSpinner();
 
+        timer = new Timer();
+
+        timerTask = new TimerTask() {
+            public void run() {
+
+                //use a handler to run a toast that shows the current timestamp
+                handler.post(new Runnable() {
+                    public void run() {
+                        if (((ColorDrawable) valueID.getBackground()).getColor() == getResources().getColor(R.color.holo_orange_dark)){
+                            valueID.setBackgroundColor(getResources().getColor(R.color.holo_blue_dark));
+                        } else{
+                            valueID.setBackgroundColor(getResources().getColor(R.color.holo_orange_dark));
+                        }
+                    }
+                });
+            }
+        };
+
+        timer.schedule(timerTask, 5000, 5000);
     }
 
     private static boolean contains(Integer[] arr, Integer item) {

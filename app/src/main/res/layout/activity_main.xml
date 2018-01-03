@@ -68,7 +68,7 @@
             android:textSize="15sp"
             android:visibility="gone"
             android:text="@string/choose_a_fibonacci"
-            android:textColor="#ff8100" />
+            android:textColor="@color/holo_orange_dark" />
 
     </RelativeLayout>
 
@@ -78,14 +78,14 @@
         android:orientation="vertical"
         android:id="@+id/valueID"
         android:layout_below="@+id/Header"
-        android:background="#ff8100"
+        android:background="@color/holo_orange_dark"
         >
 
         <TextView
             android:id="@+id/agilevalue"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:textSize="210sp"
+            android:textSize="250sp"
             android:textColor="@android:color/white"
             android:gravity="center_vertical"
             android:layout_centerVertical="true"
