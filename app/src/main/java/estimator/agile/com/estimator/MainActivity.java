@@ -18,7 +18,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -56,6 +55,10 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         clearTextOnClick();
         getSpinner();
 
+        changingShowTextSpaceEvery5Seconds();
+    }
+
+    private void changingShowTextSpaceEvery5Seconds() {
         timer = new Timer();
 
         timerTask = new TimerTask() {
