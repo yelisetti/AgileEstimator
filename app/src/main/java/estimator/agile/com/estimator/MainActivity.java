@@ -137,6 +137,11 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                         if (taskSpinner.getSelectedItem().toString().equals("Story")) {
                             if (contains(agileArr, Integer.parseInt(mInputEditText.getText().toString()))) {
                                 Arrays.sort(agileArr);
+                                if (Integer.parseInt(mInputEditText.getText().toString()) >= 100) {
+                                    mDisplayTextView.setTextSize(200);
+                                } else {
+                                    mDisplayTextView.setTextSize(250);
+                                }
                                 mDisplayTextView.setText(mInputEditText.getText().toString());
                                 alertTextView.setVisibility(View.GONE);
                                 hideKeyboard();
@@ -144,7 +149,13 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
                                 alertTextView.setVisibility(View.VISIBLE);
                             }
                         } else {
+                            if (Integer.parseInt(mInputEditText.getText().toString()) >= 100) {
+                                mDisplayTextView.setTextSize(200);
+                            } else {
+                                mDisplayTextView.setTextSize(250);
+                            }
                             mDisplayTextView.setText(mInputEditText.getText().toString());
+                            mDisplayTextView.setTextSize(250);
                             alertTextView.setVisibility(View.GONE);
                             hideKeyboard();
                         }
