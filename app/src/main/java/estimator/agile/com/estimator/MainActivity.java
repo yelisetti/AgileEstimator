@@ -2,6 +2,7 @@ package estimator.agile.com.estimator;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -31,6 +33,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     Button mClearValueBtn;
     Spinner taskSpinner;
     RelativeLayout valueID;
+    ImageButton recordBtn;
 
     Timer timer;
     TimerTask timerTask;
@@ -50,10 +53,13 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         alertTextView = findViewById(R.id.fibonacciText);
         taskSpinner = findViewById(R.id.spinner);
         valueID = findViewById(R.id.valueID);
+        recordBtn = findViewById(R.id.recordBtn);
 
         displayTextOnClick();
         clearTextOnClick();
         getSpinner();
+
+        openNewRecordingActivity();
 
         changingShowTextSpaceEvery5Seconds();
     }
@@ -164,6 +170,21 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         );
 
     }
+
+    private void openNewRecordingActivity(){
+        recordBtn.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                // Start NewActivity.class
+                Intent myIntent = new Intent(MainActivity.this,
+                        AudioRecordingActivity.class);
+                startActivity(myIntent);
+            }
+        });
+
+    }
+
 
     private void hideKeyboard() {
         InputMethodManager inputManager = (InputMethodManager)

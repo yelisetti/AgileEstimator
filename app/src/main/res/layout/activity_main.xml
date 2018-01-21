@@ -92,4 +92,14 @@
 
     </RelativeLayout>
 
+    <ImageButton
+        android:id="@+id/recordBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:src="@android:drawable/presence_audio_busy"
+        android:layout_above="@+id/valueID"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/Header" />
+
 </RelativeLayout>

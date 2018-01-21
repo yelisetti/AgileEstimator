@@ -6,4 +6,7 @@
     <string name="clear_text">Clear Value</string>
     <string name="choose_a_fibonacci">Choose a Fibonacci #</string>
     <string name="fib_alert">Choose a Fibanocci #</string>
+    <string name="record_button">RECORD</string>
+    <string name="stop_button">STOP</string>
+    <string name="play_button">PLAY</string>
 </resources>
